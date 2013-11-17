@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Syntax: build <Optional Fancy Name Here>
+# This is a shortcut to build the ls980. It's simple and optimized
+# for one system.
+screen build-ls980/setup-build $1
