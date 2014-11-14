@@ -9,4 +9,4 @@ then
 fi
 
 LOG_FILE=$1
-( time mka bacon -j1 >$LOG_FILE ) 2>>$LOG_FILE
+( time mka bacon -j8 >$LOG_FILE ) 2>>$LOG_FILE
