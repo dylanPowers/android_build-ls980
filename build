@@ -3,4 +3,15 @@
 # Syntax: build <Optional Fancy Name Here>
 # This is a shortcut to build the ls980. It's simple and optimized
 # for one system.
-screen build-ls980/setup-build $1
+
+source build/envsetup.sh
+breakfast cm_ls980-userdebug
+
+if [ $? == 0 ]
+then
+  LOG_FILE=build-log.`date +%FT%T`
+
+  screen -dm build-ls980/setup-build $LOG_FILE $1
+  sleep 1
+  tail -fn 20 $LOG_FILE
+fi
