@@ -11,7 +11,13 @@ if [ $? == 0 ]
 then
   LOG_FILE=build-log.`date +%FT%T`
 
+  echo '** Starting the build in a screen process...'
   screen -dm build-ls980/setup-build $LOG_FILE $1
+  echo '** The build has started. It may be accessed using `screen -rd`'
   sleep 1
-  tail -fn 20 $LOG_FILE
+
+  echo '** Now tailing the log file. You may safely interupt at any time'
+  echo ''
+  echo '*******************************************************************'
+  tail -fn 0 $LOG_FILE
 fi
